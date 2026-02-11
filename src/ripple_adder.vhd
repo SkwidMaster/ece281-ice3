@@ -15,8 +15,7 @@ end ripple_adder;
 
 architecture Behavioral of ripple_adder is
 
-    -- Declare components here
-    architecture Behavioral of ripple_adder is
+    -- Declare components heres
 
     component full_adder is
         port (
