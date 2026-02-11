@@ -26,4 +26,4 @@ Assert statements of other severity levels will be reported, but not fail the wo
 This is a picture of the waveform:
 ![A picture of the waveform.](waveform.png)
 
-Documentation Statement: No external resources were used on this assignment.
+Documentation Statement: I had to use the textbook to learn how to instantiate a VHDL component? entity? I still don't know right now.

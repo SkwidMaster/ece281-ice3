@@ -9,7 +9,7 @@ entity ripple_adder is
     Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
            B : in STD_LOGIC_VECTOR (3 downto 0);
            Cin : in STD_LOGIC;
-           S : out STD_LOGIC_VECTOR (3 downto 0);
+           Sum : out STD_LOGIC_VECTOR (3 downto 0);
            Cout : out STD_LOGIC);
 end ripple_adder;
 
@@ -22,7 +22,7 @@ architecture Behavioral of ripple_adder is
             A     : in std_logic;
             B     : in std_logic;
             Cin   : in std_logic;
-            S     : out std_logic;
+            Sum     : out std_logic;
             Cout  : out std_logic
             );
         end component full_adder;
@@ -38,7 +38,7 @@ begin
         A     => A(0),
         B     => B(0),
         Cin   => Cin,   -- Directly to input here
-        S     => S(0),
+        Sum     => Sum(0),
         Cout  => w_carry(0)
     );
 
@@ -47,7 +47,7 @@ begin
         A     => A(1),
         B     => B(1),
         Cin   => w_carry(0),
-        S     => S(1),
+        Sum     => Sum(1),
         Cout  => w_carry(1)
     );
 
@@ -56,7 +56,7 @@ begin
         A     => A(2),
         B     => B(2),
         Cin   => w_carry(1),
-        S     => S(2),
+        Sum     => Sum(2),
         Cout  => w_carry(2)
     );
 
@@ -65,7 +65,7 @@ begin
         A     => A(3),
         B     => B(3),
         Cin   => w_carry(2),
-        S     => S(3),
+        Sum     => Sum(3),
         Cout  => Cout
     );
 
