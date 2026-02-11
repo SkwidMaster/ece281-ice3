@@ -75,23 +75,13 @@ component ripple_adder is
 begin
 	-- PORT MAPS --------------------
       -- Assign switches to inputs
-    A   <= sw(3 downto 0);
-    B   <= sw(7 downto 4);
-    Cin <= sw(8);
-
-    -- Instantiate the ripple adder
-    U_ADDER: ripple_adder
-        port map (
-            A    => sw(4 downto 1),  -- Connect switches 0-3 to A
-            B    => sw(15 downto 12),  -- Connect switches 4-7 to B
-            Cin  => sw(0),             -- Connect switch 8 to Cin
-            Sum  => led(3 downto 0), -- Output sum to first 4 LEDs
-            Cout => led(15)           -- Output carry-out to LED 4
-        );
+    A   <= sw(4 downto 1);
+    B   <= sw(15 downto 12);
+    Cin <= sw(0);
 
     -- Connect outputs to LEDs
     led(3 downto 0) <= Sum;
-    led(4)          <= Cout;
+    led(15)          <= Cout;
 	---------------------------------
 	
 	-- CONCURRENT STATEMENTS --------
