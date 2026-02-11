@@ -55,6 +55,8 @@ begin
 	       assert (w_sum = x"F" and w_Cout = '0') report "should have gotten E" severity failure;
        w_addends <= x"7C"; w_Cin <= '0'; wait for 10 ns;
 	       assert (w_sum = x"3" and w_Cout = '1') report "should have gotten 3" severity failure;
+       w_addends <= x"FF"; w_Cin <= '0'; wait for 10 ns;
+	       assert (w_sum = x"E" and w_Cout = '1') report "should have gotten E" severity failure;
 	
 		wait; -- wait forever
 	end process;	
