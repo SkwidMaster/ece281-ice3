@@ -80,13 +80,13 @@ begin
     Cin <= sw(8);
 
     -- Instantiate the ripple adder
-    ripple_adder
+    U_ADDER: ripple_adder
         port map (
-            A    => A,
-            B    => B,
-            Cin  => Cin,
-            Sum  => Sum,
-            Cout => Cout
+            A    => sw(4 downto 1),  -- Connect switches 0-3 to A
+            B    => sw(15 downto 12),  -- Connect switches 4-7 to B
+            Cin  => sw(0),             -- Connect switch 8 to Cin
+            Sum  => led(3 downto 0), -- Output sum to first 4 LEDs
+            Cout => led(15)           -- Output carry-out to LED 4
         );
 
     -- Connect outputs to LEDs
