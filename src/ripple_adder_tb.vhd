@@ -15,7 +15,7 @@ architecture test_bench of ripple_adder_tb is
     Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
            B : in STD_LOGIC_VECTOR (3 downto 0);
            Cin : in STD_LOGIC;
-           S : out STD_LOGIC_VECTOR (3 downto 0);
+           Sum : out STD_LOGIC_VECTOR (3 downto 0);
            Cout : out STD_LOGIC
        );
    end component ripple_adder;
